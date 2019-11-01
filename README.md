@@ -3,6 +3,9 @@ PostgreSQL extension to check access permissions for partitions.
 
 pg_check_partitions_permissions is released under the [PostgreSQL License](https://opensource.org/licenses/postgresql), a liberal Open Source license, similar to the BSD or MIT licenses.
 
+## Test Status
+[![Build Status](https://travis-ci.org/MasaoFujii/pg_check_partitions_permissions.svg?branch=master)](https://travis-ci.org/MasaoFujii/pg_check_partitions_permissions)
+
 ## Install
 
 Download the source archive of pg_check_partitions_permissions from
