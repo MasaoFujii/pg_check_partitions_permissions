@@ -72,6 +72,15 @@ check_partitions_permissions(List *rangeTable, bool ereport_on_violation)
 		RangeTblEntry *rte = (RangeTblEntry *) lfirst(l);
 		AclMode	save_requiredPerms = 0;
 
+		/*
+		 * Don't check access permissions for objects except partitions
+		 * with empty requiredPerms.
+		 */
+		if (rte->requiredPerms != 0 ||
+			rte->relkind != RELKIND_RELATION ||
+			!get_rel_relispartition(rte->relid))
+			continue;
+
 		PG_TRY();
 		{
 			/*
