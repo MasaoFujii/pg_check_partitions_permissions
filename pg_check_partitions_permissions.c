@@ -10,6 +10,7 @@
 #include "postgres.h"
 
 #include "catalog/objectaddress.h"
+#include "catalog/pg_class.h"
 #include "executor/executor.h"
 #include "miscadmin.h"
 #include "utils/acl.h"
